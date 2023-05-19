@@ -13,3 +13,5 @@ pip install matplotlib
 pip install crypto-news-api
 
 pip install newsdataapi
+
+pip install tkinter
