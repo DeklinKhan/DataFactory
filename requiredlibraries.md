@@ -8,3 +8,5 @@ pip install azure
 
 pip install seaborn
 
+pip install matplotlib
+
