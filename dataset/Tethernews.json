@@ -1,0 +1,49 @@
+{
+	"name": "Tethernews",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataSystemsBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "data"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Tethernews.csv",
+				"folderPath": "input/Datasystems",
+				"container": "datafactory"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

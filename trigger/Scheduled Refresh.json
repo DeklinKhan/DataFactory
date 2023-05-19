@@ -1,0 +1,24 @@
+{
+	"name": "Scheduled Refresh",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Data Systems Pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30,
+				"startTime": "2023-05-19T03:27:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

@@ -1,0 +1,421 @@
+{
+	"name": "newsdataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Binancecoinnews",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "Bitcoinnews",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				},
+				{
+					"dataset": {
+						"referenceName": "Dogecoinnews",
+						"type": "DatasetReference"
+					},
+					"name": "source3"
+				},
+				{
+					"dataset": {
+						"referenceName": "Etheriumnews",
+						"type": "DatasetReference"
+					},
+					"name": "source4"
+				},
+				{
+					"dataset": {
+						"referenceName": "HEXcoinnews",
+						"type": "DatasetReference"
+					},
+					"name": "source5"
+				},
+				{
+					"dataset": {
+						"referenceName": "Litecoinnews",
+						"type": "DatasetReference"
+					},
+					"name": "source6"
+				},
+				{
+					"dataset": {
+						"referenceName": "ShibaInucoinnews",
+						"type": "DatasetReference"
+					},
+					"name": "source7"
+				},
+				{
+					"dataset": {
+						"referenceName": "Tethernews",
+						"type": "DatasetReference"
+					},
+					"name": "source8"
+				},
+				{
+					"dataset": {
+						"referenceName": "XRPnews",
+						"type": "DatasetReference"
+					},
+					"name": "source9"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "shibanewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "ShibNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "Tethernewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "TetherNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "XRPnewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "XRPNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "Litecoinnewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "LTCNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "HEXcoinnewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "HexNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "Etheriumnewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "EtheriumNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "Dogecoinnewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "DogeNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "Bitcoinnewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "BitcoinNewsSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "Binancecoinnewsoutput",
+						"type": "DatasetReference"
+					},
+					"name": "BNBNewsSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Removedogecoinstopwords"
+				},
+				{
+					"name": "removeethstopwords"
+				},
+				{
+					"name": "removebinancestopwords"
+				},
+				{
+					"name": "removebitcoinstopwords"
+				},
+				{
+					"name": "removehexstopwords"
+				},
+				{
+					"name": "removelitecoinstopwords"
+				},
+				{
+					"name": "removeshibastopwords"
+				},
+				{
+					"name": "removetetherstopwords"
+				},
+				{
+					"name": "removexrpstopwords"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source3",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source4",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source5",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source6",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source7",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source8",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source9",
+				"source3 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> Removedogecoinstopwords",
+				"source4 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removeethstopwords",
+				"source1 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removebinancestopwords",
+				"source2 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removebitcoinstopwords",
+				"source5 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removehexstopwords",
+				"source6 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removelitecoinstopwords",
+				"source7 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removeshibastopwords",
+				"source8 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removetetherstopwords",
+				"source9 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removexrpstopwords",
+				"removeshibastopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'ShibaInucoinnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> ShibNewsSink",
+				"removetetherstopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'Tethernews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> TetherNewsSink",
+				"removexrpstopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'XRPnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> XRPNewsSink",
+				"removelitecoinstopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'Litecoinnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> LTCNewsSink",
+				"removehexstopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'HEXcoinnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> HexNewsSink",
+				"removeethstopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'Etheriumnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> EtheriumNewsSink",
+				"Removedogecoinstopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'Dogecoinnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> DogeNewsSink",
+				"removebitcoinstopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'Bitcoinnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> BitcoinNewsSink",
+				"removebinancestopwords sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string",
+				"     ),",
+				"     filePattern:'Binancecoinnews.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> BNBNewsSink"
+			]
+		}
+	}
+}

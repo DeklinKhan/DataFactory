@@ -1,0 +1,349 @@
+{
+	"name": "volumedataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "BNBUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source21"
+				},
+				{
+					"dataset": {
+						"referenceName": "BTCUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source22"
+				},
+				{
+					"dataset": {
+						"referenceName": "DOGEUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source23"
+				},
+				{
+					"dataset": {
+						"referenceName": "ETHUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source24"
+				},
+				{
+					"dataset": {
+						"referenceName": "HEXUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source25"
+				},
+				{
+					"dataset": {
+						"referenceName": "LTCUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source26"
+				},
+				{
+					"dataset": {
+						"referenceName": "SHIBUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source27"
+				},
+				{
+					"dataset": {
+						"referenceName": "USDTUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source28"
+				},
+				{
+					"dataset": {
+						"referenceName": "XRPUSDvolume",
+						"type": "DatasetReference"
+					},
+					"name": "source29"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SHIBUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "SHIBVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "USDTUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "USDTVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "XRPUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "XRPVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "LTCUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "LTCVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "HEXUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "HEXVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "ETHUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "ETHVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "DOGEUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "DOGEVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "BTCUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "BTCVolumeSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "BNBUSDvolumeoutput",
+						"type": "DatasetReference"
+					},
+					"name": "BNBVolumeSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Removedogecoinvolumenullvalues"
+				},
+				{
+					"name": "removeethvolumenullvalues"
+				},
+				{
+					"name": "removebinancevolumenullvalues"
+				},
+				{
+					"name": "removebitcoinsvolumenullvalues"
+				},
+				{
+					"name": "removehexvolumenullvalues"
+				},
+				{
+					"name": "removelitecoinvolumenullvalues"
+				},
+				{
+					"name": "removeshibavolumenullvalues"
+				},
+				{
+					"name": "removetethervolumenullvalues"
+				},
+				{
+					"name": "removexrpvolumenullvalues"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source21",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source22",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source23",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source24",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source25",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source26",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source27",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source28",
+				"source(output(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source29",
+				"source23 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> Removedogecoinvolumenullvalues",
+				"source24 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removeethvolumenullvalues",
+				"source21 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removebinancevolumenullvalues",
+				"source22 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removebitcoinsvolumenullvalues",
+				"source25 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removehexvolumenullvalues",
+				"source26 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removelitecoinvolumenullvalues",
+				"source27 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removeshibavolumenullvalues",
+				"source28 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removetethervolumenullvalues",
+				"source29 filter(contains(array(toString(columns())),!isNull(Column_1))) ~> removexrpvolumenullvalues",
+				"removeshibavolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'SHIB-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> SHIBVolumeSink",
+				"removetethervolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'USDT-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> USDTVolumeSink",
+				"removexrpvolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'XRP-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> XRPVolumeSink",
+				"removelitecoinvolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'LTC-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> LTCVolumeSink",
+				"removehexvolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'HEX-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> HEXVolumeSink",
+				"removeethvolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'ETH-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> ETHVolumeSink",
+				"Removedogecoinvolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'DOGE-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> DOGEVolumeSink",
+				"removebitcoinsvolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'BTC-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> BTCVolumeSink",
+				"removebinancevolumenullvalues sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string",
+				"     ),",
+				"     filePattern:'BNB-USDvolume.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> BNBVolumeSink"
+			]
+		}
+	}
+}
